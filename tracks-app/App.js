@@ -5,7 +5,8 @@ import TrackCreateScreen from "./src/screens/TrackCreateScreen";
 import TrackDetailScreen from "./src/screens/TrackDetailScreen";
 import TrackListScreen from "./src/screens/TrackListScreen";
 import { Provider as AuthProvider } from "./src/context/AuthContext";
-import { setNavigator, setNevigator } from "./src/navigationRef";
+import { setNavigator } from "./src/navigationRef";
+import ResolveAuthScreen from "./src/screens/ResolveAuthScreen";
 
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
@@ -14,6 +15,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import React from "react";
 
 const switchNavigator = createSwitchNavigator({
+  ResolveAuth: ResolveAuthScreen,
   loginFlow: createStackNavigator({
     Signup: SignupScreen,
     Signin: SigninScreen,
