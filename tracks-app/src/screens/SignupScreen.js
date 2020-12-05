@@ -31,8 +31,6 @@ SignupScreen.navigationOptions = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // borderColor: "red",
-    // borderWidth: 10,
     flex: 1,
     justifyContent: "center",
     marginBottom: 200,
