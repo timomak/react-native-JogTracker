@@ -5,6 +5,8 @@ import { SafeAreaView, withNavigationFocus } from "react-navigation";
 import Map from "../components/Map";
 import TrackFrom from "../components/TrackForm";
 
+import { MaterialIcons } from "@expo/vector-icons";
+
 import { Context as LocationContext } from "../context/LocationContext";
 import useLocation from "../hooks/useLocation";
 //import "../_mockLocation";
@@ -34,6 +36,18 @@ const TrackCreateScreen = ({ isFocused }) => {
       <TrackFrom />
     </SafeAreaView>
   );
+};
+
+TrackCreateScreen.navigationOptions = {
+  title: "",
+  tabBarIcon: (
+    <MaterialIcons
+      name="alarm-add"
+      size={30}
+      color="gray"
+      //style={{ paddingTop: 15 }}
+    />
+  ),
 };
 
 const styles = StyleSheet.create({});

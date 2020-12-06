@@ -18,6 +18,18 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 
 import React from "react";
 
+import { FontAwesome5 } from "@expo/vector-icons";
+
+const trackListFlow = createStackNavigator({
+  TrackList: TrackListScreen,
+  TrackDetail: TrackDetailScreen,
+});
+
+trackListFlow.navigationOptions = {
+  title: "",
+  tabBarIcon: <FontAwesome5 name="list-ol" size={30} color="gray" />,
+};
+
 const switchNavigator = createSwitchNavigator({
   ResolveAuth: ResolveAuthScreen,
   loginFlow: createStackNavigator({
@@ -25,10 +37,7 @@ const switchNavigator = createSwitchNavigator({
     Signin: SigninScreen,
   }),
   mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackListScreen,
-      TrackDetail: TrackDetailScreen,
-    }),
+    trackListFlow,
     TrackCreate: TrackCreateScreen,
     Account: AccountScreen,
   }),
